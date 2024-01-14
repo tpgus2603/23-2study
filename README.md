@@ -8,3 +8,10 @@
 
 3.알고리즘 문제
 
+
+
+1/8~1/14
+
+1. 주요알고리즘 정리 https://github.com/tpgus2603/Algorithm.git
+
+2. java 주요문법 정리 
