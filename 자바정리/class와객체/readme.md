@@ -37,6 +37,21 @@ class PassingRef{
 
 참조변수에 null을 대입하여 인스턴스와의 관계를 끊을 수 있다. ex) ref =null;
 
+-생성자: 클래스의 이름과 동일하며 값을 반환하지않고 반환형을 표시하지 않는 메소드로  인스턴스의 초기화를 위해 자동으로 호출된다. 
+```
+public BankAccout(String acc,String ss,int bal){
+        accNumber=acc;
+        ssNumber=ss;
+        balance =bal;
+    }
+BankAccout ref=new BankAccout("12-34-89","990990-1232345",2313);
+```
+-디폴트 생성자: 생성자를 정의하지 않고 클래스를 정의하면 컴파일러가 디폴트 생성자라는 것을 클래스의 정의에 넣어준다. 
+
+
+
+
+
 
   
   
