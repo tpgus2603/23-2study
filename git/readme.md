@@ -16,6 +16,9 @@ git branch 모든 브랜치 확인 git brach -a 파일 및 폴더 addgit add 
 
 git push origin [브랜치명] 브랜치 삭제 git branch -d [브랜치 이름] 현재 브랜치에 다른 브랜치 수정사항 병합git merge [다른 브랜치 이름] 
 
+
+특정 폴더 푸쉬하고 풀하기 
+
 Respository1
 
 Folder1
