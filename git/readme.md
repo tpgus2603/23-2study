@@ -1,4 +1,19 @@
+깃 작동원리 
+
+1.working Directory:작업할 파일이 있는 디렉토리
+
+2. staging Area: 커밋을 수행할 파일들이 올라가는 영역
+
+3. git directory: git 프로젝트의 메타 데이터와 데이터 정보가 저장되는 디렉토리
+
+working directory -> git add  Staging Area -> git commit Local Repository->git push Remote Repository
+
+-> git pull(fetch +merge) working Directory
+
+
+
 깃허브 툴 
+
 
 git status 전체 로그 확인 git log git 저장소 생성하기
 
@@ -57,5 +72,4 @@ $ git push origin main
 $ git push --set-upstream origin main
 이렇게 push를 한 후 해당 원격저장소에 들어가보면 Repository1/Folder1에 해당 내용이 업데이트 되었음을 확인할 수 있다.
 
-profile
-졍
+
