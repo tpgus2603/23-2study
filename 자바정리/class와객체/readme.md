@@ -32,7 +32,8 @@ class PassingRef{
     public static void check(BankAccout acc){
         acc.checkMybalance();
     }
-}```
+}
+```
 
 참조변수에 null을 대입하여 인스턴스와의 관계를 끊을 수 있다. ex) ref =null;
 
