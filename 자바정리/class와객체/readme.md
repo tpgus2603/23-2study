@@ -11,6 +11,31 @@
   또한 하나의 인스턴스를 두 개 이상의 참조변수가 가리키는 것도 가능하다.
 
   메소드를 호출하면서 인스턴스의 참조값을 전달하는 것도 가능하다. 
+  ```
+public class BankAccout {
+    int balance=0;
+    public int checkMybalance()
+    {
+        System.out.println("잔액 :"+balance);
+        return balance;
+    }
+}
+
+class PassingRef{
+    public static void main(String[] argc)
+    {
+        BankAccout ref=new BankAccout();
+        ref.deposit(3000);
+        ref.withdraw((300));
+        check(ref); //참조값 전달 
+    }
+    public static void check(BankAccout acc){
+        acc.checkMybalance();
+    }
+}```
+
+참조변수에 null을 대입하여 인스턴스와의 관계를 끊을 수 있다. ex) ref =null;
+
 
   
   
