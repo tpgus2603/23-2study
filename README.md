@@ -5,8 +5,12 @@
 1.html/css
 
 2.스프링
+ 
+ java내용 복습 후
 
 3.알고리즘 문제
+
+   알고리즘 정리 후 
 
 
 
@@ -14,4 +18,9 @@
 
 1. 주요알고리즘 정리 https://github.com/tpgus2603/Algorithm.git
 
-2. java 주요문법 정리 
+2. java 주요문법 정리
+
+3. git의 다양한 툴들에 대해 공부
+
+
+1.14~
