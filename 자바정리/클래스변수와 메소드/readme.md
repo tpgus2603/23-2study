@@ -30,6 +30,31 @@
 
    this는 또한 메소드 내에서 인스턴스 자기 자신을 가리키는 키워드로 사용되며 매개변수와 객체 자신이 가지고있는 변수의 이름이 같은 경우 구분을 위해 사용된다.  
 
+   문자열 객체 String
+   -
+   new String 혹은 " "를 통해 객체 생성가 생성되며, 비교연산은 참조변수의 참조 값에 대한 비교 연산을 진행한다. 문자열의 내용비교는 string.equals 메소드를 활용한다. 
+
+   주요메소드
+
+      1.length : 길이 반환
+
+      2.concat:  문자열 연결 String str3= str1.concta(str2)   -> 문자열 str1과 str2가 연결되어 참조값 반환  +연산으로 대체 가능  str1+=str2
+
+      3.substring :  문자열 일부 추출  , str.substring(int begin,int end ) -> 문자열의begin index부터 추출해서 end까지  참조값 반환 
+
+      4.equals : 문자열의 내용 비교 str.equals(String str2) ->같으면 true반환 
+
+      5.compareTo : 문자열의 내용을 사전 편찬 순서로 비교 -> str1.compareTO(str2) -> st1과 str2가 같으면 0 반환 str1이  앞서는 경우 0보다 작은값 큰 경우 0보다 큰 값 반환  
+
+      6.valueOf: 기본 자료형의 값을 문자열로 바꿈  String str=String.valueOf(1005) 
+
+   StringBuilder 클래스는  append,delete,insert,replace ,reverse toString 등의 기능이 가능한 문자열 클래스이다.
+      
+
+
+
+   
+
 
 
    
