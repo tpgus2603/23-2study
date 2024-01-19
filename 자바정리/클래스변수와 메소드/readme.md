@@ -48,7 +48,7 @@
 
       6.valueOf: 기본 자료형의 값을 문자열로 바꿈  String str=String.valueOf(1005) 
 
-   StringBuilder 클래스는  append,delete,insert,replace ,reverse toString 등의 기능이 가능한 문자열 클래스이다.
+   StringBuilder 클래스는  append,delete,insert,replace ,reverse toString 등의 기능이 가능한  String 클래스에 여러 기능을 더해주는  클래스이다.
       
 
 
