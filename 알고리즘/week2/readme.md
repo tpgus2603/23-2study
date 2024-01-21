@@ -34,6 +34,7 @@ https://www.acmicpc.net/problem/2667
 4.   각 테스트케이스에 대해 bfs를 실행하고 거리를 측정한다.
 
 4.Boj 1941
+https://www.acmicpc.net/problem/1941https://www.acmicpc.net/problem/1941
 
 1.처음엔 이다솜파와 임도연파의 수를 인자로하는  백트랙킹 기법을 이용하여 구현하려 하였으나 지나온 경로를 다시 거쳐야하는 경우가 있어 부적절하다 .nqueen 문제와 다른 방법 택한다.
 2.조합을 통해 7개의 점을 택한 후(do while(permutation활용) 각 케이스에 대해 bfs를 통해 조건 성립여부를 판단한다. 
