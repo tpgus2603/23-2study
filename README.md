@@ -34,3 +34,13 @@
    https://github.com/tpgus2603/23-2study/tree/main/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/week2
 
 
+1/22~1/28
+
+1.백준 문제풀이
+
+2. java문법 정리
+
+3. html/css
+   
+
+
