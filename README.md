@@ -36,11 +36,11 @@
 
 1/22~1/28
 
-1.백준 문제풀이
+1.백준 문제풀이 https://github.com/tpgus2603/23-2study/tree/main/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/week3
 
-2. java문법 정리
+2. java문법 정리   04 상속  05 인터페이스 06 예외처리 
 
-3. html/css
+
    
 
 
