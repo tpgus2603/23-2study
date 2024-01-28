@@ -47,7 +47,7 @@ public class Exceptioncase {
 
 자바에서 예외 클래스의 최상위 클래스는 java.lang.Thorwable 이고 이 클래스에는 발생한 예외의 정보를 알 수 있는 메소드가 정의되어 있다.
 
-**public String getMessage( ) **는 예외의 원인을 담고있는 문자열을 반환하고   public void printStackTrace( )는 예외가 발생한 위치와 호출된 메소드의 정보를 출력한다. 
+**public String getMessage()** 는 예외의 원인을 담고있는 문자열을 반환하고   public void printStackTrace( )는 예외가 발생한 위치와 호출된 메소드의 정보를 출력한다. 
 
 메소드 내에서 호출된 메소드에서 예외가 발생했는데 예외 처리가 되지않으면 호출한 메소드로 예외가 넘어간다 
 
