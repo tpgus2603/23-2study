@@ -19,11 +19,24 @@ Double public Double(double v)
 
 -오토 박싱, 오토 언박싱
 -
-박싱과 언박싱이 필요한 상황에서 자동처리하기 시작함 
+박싱과 언박싱이 필요한 상황에서 자동처리하기 시작함 ,오토박싱과 언박싱이 동시에 일어나기도 한다
+
 ```
- Integer iObj=10; //오토 박싱
+ Integer iObj=10; //오토 박싱 -> Integer iObj=new Integer(10);
         Double dObj=20.5;
         
-        int num1=iObj;
+        int num1=iObj; //오토 언박싱 -> int num1= iObj.intValue();
         double num2=dObj;
+        num1++;    // new Integer(num.intValue()+1);
 ```
+
+모든 래퍼 클래스는 java.lang.Number 라는 추상 클래스를 상속한다. 그리고 추상메소드 3개가 존재한다. 어떠한 래퍼 인스턴스를 대상으로도 저장된 값을 다양한 형태로 반환할 수있다.
+
+public abstract int intValue();
+public abstract int longValue():
+public abstract int doubleValue();
+
+
+
+
+
