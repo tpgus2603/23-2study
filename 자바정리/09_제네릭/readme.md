@@ -63,6 +63,18 @@ public class BoxinBox {
 -제네릭 클래스의 타입 인자를 상속을 활용하여 제한 할 수 있다.
 ex) class Box<T extends Number> 와 같이 사용하면 T는 Number를 상속하는 클래스만 타입 인자로 받게된다. 
 
+-제네릭 클래스의 타입인자를 인터페이스로 제한 할 수 있는데. 이떄 extend interface와 같이 제한한다. 
+
+-제네릭 메소드
+-
+클래스 전부가 아닌 일부 메소드에 대해서 제네릭으로 정의하는것이 가능하다. (클래스 메소드도 가능함)  -> 메소드 호출시 자료형이 결정된다. 
+EX) Pulbic static <T> Box<T> makeBox(T o) -> 반환형이 Box<T>
+    
+    public static <T> T openBox(Box<T> box){
+        return box.get();
+    }
+제네릭 메소드 역시 상속을 활용하여 타입 인자를 제한 할 수 있다. 
+
 
 
 
