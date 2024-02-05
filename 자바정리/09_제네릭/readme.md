@@ -133,6 +133,7 @@ Box< Integer > iBox= EmptyBoxFactory.< Integer >makeBox();와 같이 타입인�
 -
 **<?>** 기호로 활용  제네릭과 유사하게  타입인자를 더 범용성 있게 받을 수 있게한다. 와일드 카드는 코드를 간결하게 만든다
 ex)
+
 public static < T > void peekBox<Box< T > box) -> 제네릭 기반 메소드
 
 public static void peekBox< Box< ? > box) ->와일드 카드 기반 메소드
