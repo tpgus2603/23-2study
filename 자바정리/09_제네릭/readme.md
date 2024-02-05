@@ -75,6 +75,57 @@ EX) Pulbic static <T> Box<T> makeBox(T o) -> 반환형이 Box<T>
     }
 제네릭 메소드 역시 상속을 활용하여 타입 인자를 제한 할 수 있다. 
 
+-제네릭 클래스 상속
+-
+제네릭 클래스의 경우 상속이 가능한데  Box<Integer>와 같은 제네릭 타입이 일종의 자료형으로써  상위 클래스로 간주되고 steelBox<Integer>이 하위 클래스로 간주된다.
+```
+
+class Box<T>{
+    protected T ob;
+    public void set(T o){
+        ob=o;
+    }
+    public T get(){
+        return ob;
+    }
+}
+class steelBox<T> extends Box{
+    public steelBox(T o){
+        ob=o;
+    }
+}
+
+public class genericInheritance {
+    public static void main(String[] a){
+        Box<Integer> iBox=new steelBox<>(7959);
+        Box<String>sBox=new steelBox<>("Simple");
+        System.out.println(iBox.get());
+        System.out.println(sBox.get());
+    }
+}
+```
+그렇다면 **Box<Number> box=new Box<Integer>()** 같은 경우 Integer이 Number의 하위클래스이긴 하지만 제네릭타입 자체가 쌍으로 상속되는것이 아니기에 컴파일이 불가능하다.
+하지만 **Box<Number>kBox=new steelBox<Integer>()** 같은 경우는 가능하다.
+
+-**타켓 타입**
+```
+class EmptyBoxFactory{
+    public static <T> Box<T> makeBox(){
+        Box<T> box=new Box<T>();
+        return box;
+    }
+}
+```
+컴파일러가 자료형을 유추하는 상황중 하나로 만약 제네릭 메소드에서 타입 인자가 전달되지 않는다면 
+
+Box<Integer> iBox= EmptyBoxFactory.<Integer>makeBox();와 같이 타입인자를  <>안에 메소드 이름 옆에 표시한다.
+한편 이렇게 하지않고 **Box<Integer> iBox= EmptyBoxFactory.makeBox();** 처럼 해도 컴파일이 가능한데 이 경우는 왼쪽에 선언된 Box<Integer>을 보고 컴파일러가 메소드의 타입을 유추하기 때문에 가능하다
+
+이러한 상황에서 제네릭 메소드의 T유추에 사용된 정보 Box<Integer>을 타켓타입이라고 한다.
+
+
+
+
 
 
 
