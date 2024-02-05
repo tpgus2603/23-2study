@@ -33,8 +33,8 @@ Double public Double(double v)
 모든 래퍼 클래스는 java.lang.Number 라는 추상 클래스를 상속한다. 그리고 추상메소드 3개가 존재한다. 어떠한 래퍼 인스턴스를 대상으로도 저장된 값을 다양한 형태로 반환할 수있다.
 
 public abstract int intValue();
-public abstract int longValue():
-public abstract int doubleValue();
+public abstract long longValue():
+public abstract double doubleValue();
 
 
 
