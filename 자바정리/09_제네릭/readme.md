@@ -177,7 +177,7 @@ class Box<T> implements Getable<T>{
     }
 }
 ```
-Getable < T >형 참조변수는 T의 타입에 상관없이  이를 구현하는 클래스를 참조 할 수 있다. (Box<T>와 Gettable<T>의 타입 매개변수가 다를 수도 있음-> Getable<String>와 같이 인터페이스의 제네릭 타입이 결정된 상태 일수도 있고 그 상황에서 Box<T>는 정해지지 않아도 된다)
+Getable < T >형 참조변수는 T의 타입에 상관없이  이를 구현하는 클래스를 참조 할 수 있다. (Box<T>와 Gettable<T>의 타입 매개변수가 다를 수도 있음-> Getable< String >와 같이 인터페이스의 제네릭 타입이 결정된 상태 일수도 있고 그 상황에서 Box<T>는 정해지지 않아도 된다)
 
 
 
