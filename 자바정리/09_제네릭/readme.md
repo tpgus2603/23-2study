@@ -38,6 +38,7 @@ public class generic {
 **T**를 자료형 정보를 인자로 전달 받는 형태이기 때문에  **타입 매개변수(type parameter)** 라고 한다. 
 
 **타입인자(type arguement)** Apple이 매개변수T로 전달되어 새로운 자료형이 완성되었기 때문에 Box2< Apple >를 **매개변수화 타입 (제네릭 타입)** 이라고한다.
+
 ->타입 인자로 기본자료형은 쓰지못하고 래퍼클래스를 사용해야한다. 
 
 -타입 인자는 < >같은 다이아몬드 기호에 의해 생략이 가능하며 이를 컴파일러가 추론한다. 
@@ -59,6 +60,7 @@ public class BoxinBox {
 }
 ```
 -다중 타입 매개변수 설정도 가능하며 class DBox<L,R> 와 같이 제네릭 클래스를 설정하고
+
 제네릭 타입을 Box<String, Integer> box=new Box<String ,Integer>()과 같이 설정한다.  
 
 -제네릭 클래스의 타입 인자를 상속을 활용하여 제한 할 수 있다.
@@ -69,6 +71,7 @@ ex) class Box<T extends Number> 와 같이 사용하면 T는 Number를 상속하
 -제네릭 메소드
 -
 클래스 전부가 아닌 일부 메소드에 대해서 제네릭으로 정의하는것이 가능하다. (클래스 메소드도 가능함)  -> 메소드 호출시 자료형이 결정된다. 
+
 EX) Pulbic static < T > Box< T >makeBox(T o) -> 반환형이 Box<T>
     
     public static <T> T openBox(Box< T > box){
@@ -106,6 +109,7 @@ public class genericInheritance {
 }
 ```
 그렇다면 **Box< Number > box=new Box< Integer >()** 같은 경우 Integer이 Number의 하위클래스이긴 하지만 제네릭타입 자체가 쌍으로 상속되는것이 아니기에 컴파일이 불가능하다.
+
 하지만 **Box< Number >kBox=new steelBox< Integer >()** 같은 경우는 가능하다.
 
 -**타켓 타입**
@@ -120,6 +124,7 @@ class EmptyBoxFactory{
 컴파일러가 자료형을 유추하는 상황중 하나로 만약 제네릭 메소드에서 타입 인자가 전달되지 않는다면 
 
 Box< Integer > iBox= EmptyBoxFactory.< Integer >makeBox();와 같이 타입인자를  <>안에 메소드 이름 옆에 표시한다.
+
 한편 이렇게 하지않고 **Box< Integer > iBox= EmptyBoxFactory.makeBox();** 처럼 해도 컴파일이 가능한데 이 경우는 왼쪽에 선언된 Box<Integer>을 보고 컴파일러가 메소드의 타입을 유추하기 때문에 가능하다
 
 이러한 상황에서 제네릭 메소드의 T유추에 사용된 정보 Box<Integer>을 타켓타입이라고 한다.
@@ -129,6 +134,7 @@ Box< Integer > iBox= EmptyBoxFactory.< Integer >makeBox();와 같이 타입인�
 **<?>** 기호로 활용  제네릭과 유사하게  타입인자를 더 범용성 있게 받을 수 있게한다. 와일드 카드는 코드를 간결하게 만든다
 ex)
 public static < T > void peekBox<Box< T > box) -> 제네릭 기반 메소드
+
 public static void peekBox< Box< ? > box) ->와일드 카드 기반 메소드
 
 와일드 카드는 **상한**과 **하한** 제한으로 종류가 나뉜다. 
@@ -138,6 +144,7 @@ public static void peekBox< Box< ? > box) ->와일드 카드 기반 메소드
 Box< ? extends Number > box
 
 -> box는 Box< T >를 인스턴스를 참조하는 참조변수
+
 T는 Number 혹은 Number를 상속하는 하위 클래스여야한다.
 
 public static void outBox Box<? extends Toy> box -> 인스턴스를 꺼내는 메소드인 get()은 호출 가능하지만 Toy 인스턴스를 저장하는 메소드인 set(new Toy())메소드는 호출이 불가능하게 한다. ( Box<toy> 타입을 저장 가능한지 보장이 안됨 -> 메소드의 활용제한
