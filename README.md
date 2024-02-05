@@ -42,7 +42,7 @@
 
 1/29~2/5
 
-1.백준문제 풀이 
+1.백준문제 풀이 https://github.com/tpgus2603/23-2study/blob/main/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/week4/readme.md
 
 2. java문법 정리 07자바의 메모리모델 08 래퍼클래스 09 제네릭
 
