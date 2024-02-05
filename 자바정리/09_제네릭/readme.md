@@ -69,9 +69,9 @@ ex) class Box<T extends Number> 와 같이 사용하면 T는 Number를 상속하
 -제네릭 메소드
 -
 클래스 전부가 아닌 일부 메소드에 대해서 제네릭으로 정의하는것이 가능하다. (클래스 메소드도 가능함)  -> 메소드 호출시 자료형이 결정된다. 
-EX) Pulbic static <T> Box<T> makeBox(T o) -> 반환형이 Box<T>
+EX) Pulbic static < T > Box< T >makeBox(T o) -> 반환형이 Box<T>
     
-    public static <T> T openBox(Box<T> box){
+    public static <T> T openBox(Box< T > box){
         return box.get();
     }
 제네릭 메소드 역시 상속을 활용하여 타입 인자를 제한 할 수 있다. 
@@ -105,8 +105,8 @@ public class genericInheritance {
     }
 }
 ```
-그렇다면 **Box<Number> box=new Box<Integer>()** 같은 경우 Integer이 Number의 하위클래스이긴 하지만 제네릭타입 자체가 쌍으로 상속되는것이 아니기에 컴파일이 불가능하다.
-하지만 **Box<Number>kBox=new steelBox<Integer>()** 같은 경우는 가능하다.
+그렇다면 **Box< Number > box=new Box< Integer >()** 같은 경우 Integer이 Number의 하위클래스이긴 하지만 제네릭타입 자체가 쌍으로 상속되는것이 아니기에 컴파일이 불가능하다.
+하지만 **Box< Number >kBox=new steelBox< Integer >()** 같은 경우는 가능하다.
 
 -**타켓 타입**
 ```
@@ -119,8 +119,8 @@ class EmptyBoxFactory{
 ```
 컴파일러가 자료형을 유추하는 상황중 하나로 만약 제네릭 메소드에서 타입 인자가 전달되지 않는다면 
 
-Box<Integer> iBox= EmptyBoxFactory.<Integer>makeBox();와 같이 타입인자를  <>안에 메소드 이름 옆에 표시한다.
-한편 이렇게 하지않고 **Box<Integer> iBox= EmptyBoxFactory.makeBox();** 처럼 해도 컴파일이 가능한데 이 경우는 왼쪽에 선언된 Box<Integer>을 보고 컴파일러가 메소드의 타입을 유추하기 때문에 가능하다
+Box< Integer > iBox= EmptyBoxFactory.< Integer >makeBox();와 같이 타입인자를  <>안에 메소드 이름 옆에 표시한다.
+한편 이렇게 하지않고 **Box< Integer > iBox= EmptyBoxFactory.makeBox();** 처럼 해도 컴파일이 가능한데 이 경우는 왼쪽에 선언된 Box<Integer>을 보고 컴파일러가 메소드의 타입을 유추하기 때문에 가능하다
 
 이러한 상황에서 제네릭 메소드의 T유추에 사용된 정보 Box<Integer>을 타켓타입이라고 한다.
 
@@ -128,15 +128,16 @@ Box<Integer> iBox= EmptyBoxFactory.<Integer>makeBox();와 같이 타입인자를
 -
 **<?>** 기호로 활용  제네릭과 유사하게  타입인자를 더 범용성 있게 받을 수 있게한다. 와일드 카드는 코드를 간결하게 만든다
 ex)
-public static <T> void peekBox<Box<T> box) -> 제네릭 기반 메소드
-public static void peekBox<Box<?> box) ->와일드 카드 기반 메소드
+public static < T > void peekBox<Box< T > box) -> 제네릭 기반 메소드
+public static void peekBox< Box< ? > box) ->와일드 카드 기반 메소드
 
 와일드 카드는 **상한**과 **하한** 제한으로 종류가 나뉜다. 
 
 **상한 제한된 와일드카드(upper bounded)** : 하위 클래스인 제네릭 타입의 인스턴스만 전달되도록 제한 할때 사용하는 와일드카드 ->**꺼내는 작업(get)** 만 활용할때 자주사용
 
-Box<? extends Number> box
--> box는 Box<T>를 인스턴스를 참조하는 참조변수
+Box< ? extends Number > box
+
+-> box는 Box< T >를 인스턴스를 참조하는 참조변수
 T는 Number 혹은 Number를 상속하는 하위 클래스여야한다.
 
 public static void outBox Box<? extends Toy> box -> 인스턴스를 꺼내는 메소드인 get()은 호출 가능하지만 Toy 인스턴스를 저장하는 메소드인 set(new Toy())메소드는 호출이 불가능하게 한다. ( Box<toy> 타입을 저장 가능한지 보장이 안됨 -> 메소드의 활용제한
@@ -144,19 +145,19 @@ public static void outBox Box<? extends Toy> box -> 인스턴스를 꺼내는 �
 **하한 제한된 와일드카드(lower bounded)** : 상위클래스인 제네릭 타입의 인스턴스만 전달되도록 제한 할때 사용하는 와일드카드 ->**저장하는 작업(set)만** 활용할때 자주사용 
 
 Box<? super Integer> box
--> box는 Box<T> 인스턴스를 참조하는 참조변수이다.
-->Box<T> 인스턴스의 T는 Integer 혹은 Integer가 상속하는 상위클래스여야 한다. 이 경우 타입인자는 Integer, Number, Object로 제한되낟. 
+-> box는 Box< T > 인스턴스를 참조하는 참조변수이다.
+->Box< T > 인스턴스의 T는 Integer 혹은 Integer가 상속하는 상위클래스여야 한다. 이 경우 타입인자는 Integer, Number, Object로 제한되낟. 
 
 
 public static void InBox Box<? super Toy> box ->  Toy 인스턴스를 저장하는 메소드인 set(new Toy())은 호출 가능하지만 Toy 인스턴스를 꺼내는 get(new Toy())메소드를 호출하여 저장하는것
 
 Toy mytoy=box.get() 이 불가능한데 Box의 타입인자가 Toy로 확정되지 않기 떄문이다. 
 
- ( Box<toy> 타입을 저장 가능한지 보장이 안됨 -> 메소드의 활용제한
+ ( Box< toy > 타입을 저장 가능한지 보장이 안됨 -> 메소드의 활용제한
 
  **와일드 카드에서 범용성있는 상한 하한을 위해 제네릭과 혼합하여 사용이 가능하다**
 
-public static < T > void outBox(Box < ? extends T> box){ };    -> 타입 매개변수 T에 대해 상속하는 와일드카드 -> 원래는 T의 타입에따라 메소드를 오버로딩 해야하는 상황을 제네릭으로 해결 
+public static < T > void outBox( Box < ? extends T > box){ };    -> 타입 매개변수 T에 대해 상속하는 와일드카드 -> 원래는 T의 타입에따라 메소드를 오버로딩 해야하는 상황을 제네릭으로 해결 
 
 -제네릭 인터페이스
 - 
@@ -176,7 +177,7 @@ class Box<T> implements Getable<T>{
     }
 }
 ```
-Getable <T>형 참조변수는 T의 타입에 상관없이  이를 구현하는 클래스를 참조 할 수 있다. (Box<T>와 Gettable<T>의 타입 매개변수가 다를 수도 있음-> Getable<String>와 같이 인터페이스의 제네릭 타입이 결정된 상태 일수도 있고 그 상황에서 Box<T>는 정해지지 않아도 된다)
+Getable < T >형 참조변수는 T의 타입에 상관없이  이를 구현하는 클래스를 참조 할 수 있다. (Box<T>와 Gettable<T>의 타입 매개변수가 다를 수도 있음-> Getable<String>와 같이 인터페이스의 제네릭 타입이 결정된 상태 일수도 있고 그 상황에서 Box<T>는 정해지지 않아도 된다)
 
 
 
