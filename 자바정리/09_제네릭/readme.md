@@ -93,7 +93,7 @@ class Box<T>{
         return ob;
     }
 }
-class steelBox<T> extends Box{
+class steelBox<T> extends Box<T>{
     public steelBox(T o){
         ob=o;
     }
@@ -110,7 +110,6 @@ public class genericInheritance {
 ```
 그렇다면 **Box< Number > box=new Box< Integer >()** 같은 경우 Integer이 Number의 하위클래스이긴 하지만 제네릭타입 자체가 쌍으로 상속되는것이 아니기에 컴파일이 불가능하다.
 
-하지만 **Box< Number >kBox=new steelBox< Integer >()** 같은 경우는 가능하다.
 
 -**타켓 타입**
 ```
