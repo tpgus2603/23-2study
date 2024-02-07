@@ -66,7 +66,7 @@ public class BoxinBox {
 -제네릭 클래스의 타입 인자를 상속을 활용하여 제한 할 수 있다.
 ex) class Box<T extends Number> 와 같이 사용하면 T는 Number를 상속하는 클래스만 타입 인자로 받게된다. 
 
--제네릭 클래스의 타입인자를 인터페이스로 제한 할 수 있는데. 이떄 extend interface와 같이 제한한다. 
+-제네릭 클래스의 타입인자를 인터페이스로 제한 할 수 있는데. 이떄 **extend interface**와 같이 상위클래스를 상속하는 것처럼  제한한다. 
 
 -제네릭 메소드
 -
