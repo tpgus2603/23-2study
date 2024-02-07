@@ -5,7 +5,9 @@
 컬렉션을 상속하는 인터페이스 
 Set< E >  -> 구현 클래스 : HashSet< E > TreeSet< E >
 List< E > -> 구현 클래스 : Arraylist< E > , LinkedList< E >
-Queue< E > 
+Queue< E >  -> 구현 클래스 : LinkedList< E > ,  
+Dequue<E> -> 구현 클래스 : ArrayDequeu< E > LinkedList<E>
+Vector<E> -> Stack< E >
 
 ArrayList< E > 같은 경우  Arrays객체를 생성하여 처음에 초기화 후 다시 ArrayList 객체를 생성하고 인자로 넣는 방식으로 초기에 여러 객체를 초기화 하는게 가능하다.
 
@@ -29,4 +31,17 @@ TreeSet<E>는 정렬 상태가 유지되는 Set으로 인터페이스 **Comparab
 일시적인 객체의 정렬 기준은  **Comparator< T >**  인터페이스를 구현하여 int compare(T o1 ,T o2)를 통해 기준을 정한고  이를 TreeSet의 생성자의 인자로 넣어 객체를 생성한다. ->String 같이 자바에서 제공되는 기본 클래스의 정렬 기준을 바꿀때 좋은 해결책이된다.
 
 **List에 있는 중복된 인스턴스를 다시 HashSet에 넣고 다시 List에 넣으면 중복된 인스턴스 제거가 가능하다.**   
+
+자바의 Queue<E> 인터페이스의 메소드는  offer(넣기) ,poll(꺼내기) ,peek(확인하기) 세가지를 사용한다. 
+
+Queue
+
+
+-Map<K,V> 인터페이스
+-
+**HashMap<K,V>와 TreeMap<K,V>** 두 가지 클래스가 맵 인터페이스를 구현한다.  Hash는 해쉬테이블 TreeMap은 Key의 정렬 상태를 유지하는 Map이다
+
+map.get(Key)를 통해 저장된 Value값을 얻을 수 있다.
+
+
 
