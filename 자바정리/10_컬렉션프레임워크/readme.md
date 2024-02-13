@@ -43,5 +43,18 @@ Queue
 
 map.get(Key)를 통해 저장된 Value값을 얻을 수 있다.
 
+**TreeMap**에서는 Comparator<T>인터페이스를 기반으로 정렬 기준을 결정한다.
+
+-컬렉션에 대한 정렬 알고리즘
+-
+정렬 메소드 Sort에 대해서 컬렉션 인터페이스에 따라 다양하게 메소드 오버로딩이 되어있는데 
+
+예를 들어List<E>에 대해서는 public static <T extends Comparable < T >> void sort<List< T > list)가 있다면 , 이 경우 인자를 List<T>를 받는데 타입 매개변수T는 Comparable< T >인터페이스를 구현한 상태여야한다.
+
+하지만 실제로 오버로딩 된 메소드는 Public static<T extends Comparablr<? super T>> void (List< T > list)로 정의되어 있는데 이 경우는 T를 포함해 T의 상위클래스가 Comparable< >를 구현한 상태여야 한다. 즉 인터페이스가 간접 구현되어 있는 경우 타입인자로 가능한것이다. 
+
+**Comparator**기반 메소드도 존재하는데 이 경우 public static <T> void sort(List <T> list,Comparator<? superT> c) 
+로 Comparator c는 T를 포함해  상위 클래스에 대한 Comparator를 구현해야 한다 즉 T는 Comparator 인터페이스를 간접 구현해야한다.
+
 
 
