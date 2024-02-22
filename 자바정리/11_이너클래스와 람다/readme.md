@@ -101,15 +101,42 @@ new 키워드 뒤에 증괄호 세트와 더불어 인터페이스인 경우 메
     
 ```
 
-람다
+람다(->)
 -
+익명클래스와 유사하게 인스턴스를 생성하는데 코드를 간결하게 만드는 기법 ,클래스의 정의 및 인터페이스의 구현을 생략할 수 있다. 즉 -> 기호를 통해 인터페이스를 구현하는 인스턴스의 생성 및  추상메소드 구현을 동시에 할 수 있다
 
+람다식에는 인터페이스의 추상메소드의 매개변수와 구현한 메소드가 중괄호 안에 나타나는데  메소드 이름과 관련된 정보를 생략할 수 있다. ,또한 람다식은 매개변수인자로 전달 될 수 있다. 
 
+```
+interface Printable{
+    void print(String s);
+}
+class lamda{
+    public static void ShowString(Printable prn,String s)
+    {
+        prn.print(s);
+    }
+    public static void main(String  [] a){
+        Printable prn=(String s)->{System.out.println(s);};
+        prn.print(("What is lamda?"));
+        ShowString((String s)->{System.out.println(s);},"What is lamda2");
+    }
+}
+```
 
+위의 형태는 기본적인 람다식으로 매개변수의 타입을 생략 할 수 있다. 또한 메소드의 몸체가 하나의 문장(세미 콜론 기준)으로 이루어져 있다면 중괄호를 생략 할 수있다. 또한 매개변수가 하나라면 소괄호도 생략 할 수있다.
 
+**s-> System.out.println(s)** 이렇게 되면 중괄호를 생략하면서 중괄호 안에 있는 세미콜론도 같이 지우게된다. 
 
+매개변수가 있고 값을  반환하는 람다식은 다음과 같이 되는데 return문이 메소드 몸체에 들어가면 그 문장이 하나여도 중괄호를 생략 할 수 없다.
 
+Cal c=(a,b)-> {return a+b;}};    이 경우엔 매개변수 a와 b를 인자로 하고 메소드에서 a+b를 반환한다. 
 
+위의 문장처럼 return 문이 메소드 몸체를 이루는 유일한 문장인 경우 return문과 중괄호가 생략가능하다.
+
+Cal c=(a,b)-> a+b   ;
+
+이렇게 하나의 추상 메소드가 존재하는 인터페이스를 **함수형 인터페이스**라고 한다.람다식은 이러한 함수형 인터페이스를 대상으로만 가능하다. 
 
 
 
