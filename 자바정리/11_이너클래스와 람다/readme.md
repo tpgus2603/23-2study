@@ -39,7 +39,7 @@ class UseMemberInner{
     {
         Papers p =new Papers("서류 내용 :행복합니다");
         //Printable prn= p.new Printer();
-        Printable prn= p.getPrinter();
+        Printable prn= p.getPrinter();   -> getPrinter 메소드가 반환하는 인스턴스가 바뀌어도 외부 클래스를  수정 할 필요가 없게된다. 또한 외부에서는 어떤 인스턴스의 참조값을 반환하는지 아지 못한다. 
         prn.print();
     }
 }
