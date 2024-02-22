@@ -16,7 +16,38 @@ static 네스티드 클래스 내에서 외부 클래스의 인스턴스 변수�
 
 **멤버 클래스**는 Outer클래스를 기반으로 생성되며 외부클래스의 인스턴스의 변수에 접근이 가능하고 종속적이다. 클래스의 정의를 감추려 할때 인터페이스와 같이 많이 사용됨 
 
--> 
+-> private로 선언된 멤버 클래스는 감싸는 클래스 내에서만 생성이 가능하다. 즉 getter메소드를 만들어아한다.
+```
+interface Printable{
+    void print();
+}
+
+public class Papers {
+    private String con;
+    public Papers(String s){con=s;}
+    public Printable getPrinter(){
+        return new Printer();
+    }
+    private class Printer implements Printable{
+        public void print(){
+            System.out.println(con);
+        }
+    }
+}
+class UseMemberInner{
+    public static void main(String[] a)
+    {
+        Papers p =new Papers("서류 내용 :행복합니다");
+        //Printable prn= p.new Printer();
+        Printable prn= p.getPrinter();
+        prn.print();
+    }
+}
+
+```
+
+
+
 
 
 로컬 클래스: 중괄호 내에 ,특히 메소드 내에 정의 됨
