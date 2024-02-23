@@ -156,7 +156,7 @@ Box<? super Integer> box
 ->Box< T > 인스턴스의 T는 Integer 혹은 Integer가 상속하는 상위클래스여야 한다. 이 경우 타입인자는 Integer, Number, Object로 제한되낟. 
 
 
-public static void InBox Box<? super Toy> box ->  Toy 인스턴스를 저장하는 메소드인 set(new Toy())은 호출 가능하지만 Toy 인스턴스를 꺼내는 get(new Toy())메소드를 호출하여 저장하는것
+public static void InBox (Box<? super Toy> box) ->  Toy 인스턴스를 저장하는 메소드인 set(new Toy())은 호출 가능하지만 Toy 인스턴스를 꺼내는 get(new Toy())메소드를 호출하여 저장하는것
 
 Toy mytoy=box.get() 이 불가능한데 Box의 타입인자가 Toy로 확정되지 않기 떄문이다. 
 
