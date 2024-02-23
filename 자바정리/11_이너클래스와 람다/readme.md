@@ -146,7 +146,7 @@ ex> Cal<Integer> c= (a,b)-> a+b;
 
 함수형 인터페이스는 다양하게 존재하는데 그중에서도 Predicate<T>와 Supplier<T> , Consumer<T>, Function<T,R>이 많이 사용된다 java.utill.function 패키지에 존재한다. 
 
-**Predicatea<T>** : 전달된 인자를 판단하여 true또는 false를 반환해야할때 사용한다. boolean test<T t> ; 메소드를 구현한다.
+**Predicate<T>** : 전달된 인자를 판단하여 true또는 false를 반환해야할때 사용한다. boolean test<T t> ; 메소드를 구현한다.
 
 **Supplier<T>** : 단순히 무엇인가를 반환해야 할 때 유용하게 사용된다. T get() 추상메소드가 존재한다. 
 
