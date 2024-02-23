@@ -124,7 +124,7 @@ class lamda{
 }
 ```
 
-위의 형태는 기본적인 람다식으로 매개변수의 타입을 생략 할 수 있다. 또한 메소드의 몸체가 하나의 문장(세미 콜론 기준)으로 이루어져 있다면 중괄호를 생략 할 수있다. 또한 매개변수가 하나라면 소괄호도 생략 할 수있다.
+위의 형태는 기본적인 람다식으로 매개변수의 타입을 생략 할 수 있다. 또한 메소드의 **몸체가 하나의 문장(세미 콜론 기준)으로 이루어져 있다면** 중괄호를 생략 할 수있다. 또한**매개변수가 하나라면** 소괄호도 생략 할 수있다.
 
 **s-> System.out.println(s)** 이렇게 되면 중괄호를 생략하면서 중괄호 안에 있는 세미콜론도 같이 지우게된다. 
 
@@ -132,14 +132,38 @@ class lamda{
 
 Cal c=(a,b)-> {return a+b;}};    이 경우엔 매개변수 a와 b를 인자로 하고 메소드에서 a+b를 반환한다. 
 
-위의 문장처럼 return 문이 메소드 몸체를 이루는 유일한 문장인 경우 return문과 중괄호가 생략가능하다.
+위의 문장처럼 **return 문이 메소드 몸체를 이루는 유일한 문장**인 경우 return문과 중괄호가 생략가능하다.
 
 Cal c=(a,b)-> a+b   ;
 
+매개변수가 없는 람다식은 매개변수를 표현하는 소괄호 안을 비우면 된다. 
+
 이렇게 하나의 추상 메소드가 존재하는 인터페이스를 **함수형 인터페이스**라고 한다.람다식은 이러한 함수형 인터페이스를 대상으로만 가능하다. 
 
+제네릭으로 정의된 인터페이스는 람다식을 만들때 참조변수의 형을 지정해서 문장을 구성해야한다.
 
+ex> Cal<Integer> c= (a,b)-> a+b;
 
+함수형 인터페이스는 다양하게 존재하는데 그중에서도 Predicate<T>와 Supplier<T> , Consumer<T>, Function<T,R>이 많이 사용된다 java.utill.function 패키지에 존재한다. 
+
+**Predicatea<T>** : 전달된 인자를 판단하여 true또는 false를 반환해야할때 사용한다. boolean test<T t> ; 메소드를 구현한다.
+
+**Supplier<T>** : 단순히 무엇인가를 반환해야 할 때 유용하게 사용된다. T get() 추상메소드가 존재한다. 
+
+**Consumer<T>** : 전달된 인자 기반으로 반환 이외의 다른 결과를 보일때 void accept(T t)  추상메소드가 존재한다.
+
+**Function<T,R>**: 전달 인자와 반환 값이  모두 존재할 때 쓰인다. R apply(T t) 추상메소드가 존재한다. 
+
+```
+import java.util.function.Function;
+
+public class FunctionDemo {
+    public static void main(String[] srt){
+        Function<String,Integer> f= s-> s.length();
+        System.out.println(f.apply("robot"));
+    }
+}
+```
 
 
 
