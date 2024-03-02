@@ -1,11 +1,19 @@
 Alt + Enter : Context actions & 퀵 픽스
+
 Shift Shift : search everywhere
+
 Ctrl + Space : 기본 코드 자동 완성
+
 Ctrl + Shift + Space : 스마트 자동 완성 추천
+
 Alt + Ins : Generate code
+
 Ctrl + P : Parameter info
+
 Ctrl + W : Extend selection (입력할 수록 범위 커짐)
+
 Ctrl + Shift + W : Shrink selection
+
 Ctrl + E : 최근 사용 파일
 라인
 Ctrl + D : 라인 복사
@@ -27,6 +35,8 @@ Ctrl + Shift + F : 전체에서 검색
 Ctrl + Shift + R : 전체에서 교체
 F3/Shift + F3 : Find next / previous
 Ctrl + F : 현재 파일에서 검색
+
+
 Ctrl + R : 현재 패일에서 교체
 3. 마치며
 참고
