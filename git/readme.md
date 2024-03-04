@@ -1,4 +1,5 @@
 깃 작동원리 
+-
 
 1.working Directory:작업할 파일이 있는 디렉토리
 
@@ -13,7 +14,7 @@ working directory -> git add  Staging Area -> git commit Local Repository->git p
 
 
 깃허브 툴 
-
+-
 
 git status 전체 로그 확인 git log git 저장소 생성하기
 
@@ -33,7 +34,7 @@ git push origin [브랜치명]       브랜치 삭제 git branch -d [브랜치
 
 
 특정 폴더 푸쉬하고 풀하기 
-
+-
 Respository1
 
 Folder1
@@ -73,7 +74,7 @@ $ git push --set-upstream origin main
 이렇게 push를 한 후 해당 원격저장소에 들어가보면 Repository1/Folder1에 해당 내용이 업데이트 되었음을 확인할 수 있다.
 
 git 오류
-
+-
 1. fatal: The current branch master has no upstream branch.에러 -> 원격 저장소에 대한 기본 브랜치 설정이 안되어있는 경우
  처음 브랜치를 설정해서 해결 가능
 
