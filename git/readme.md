@@ -17,7 +17,7 @@ working directory -> git add  Staging Area -> git commit Local Repository->git p
 
 git status 전체 로그 확인 git log git 저장소 생성하기
 
-git init 저장소 복제 및 다운로드 git clone [https: ~~~~ ] 저장소에 코드 추가 git addgit add * 커밋에 파일의 변경 사항을 한번에 모두 포함 
+git init 저장소 복제 및 다운로드 git clone [https: ~~~~ ] 저장소에 코드 추가  git add   git add * 커밋에 파일의 변경 사항을 한번에 모두 포함 
 
 git add -A 커밋 생성git commit -m "message" 변경 사항 원격 서버 업로드 (push)git push origin master 원격 저장소의 변경 내용을 현재 디렉토리로 가져오기
 
@@ -29,7 +29,7 @@ git checkout [브랜치명] 브랜치를 생성하고 해당 브랜치로 바�
 
 git branch 모든 브랜치 확인 git brach -a 파일 및 폴더 addgit add . 커밋 git commit -m "commit message" 원하는 브랜치로 push하여 원격 서버에 전송
 
-git push origin [브랜치명] 브랜치 삭제 git branch -d [브랜치 이름] 현재 브랜치에 다른 브랜치 수정사항 병합git merge [다른 브랜치 이름] 
+git push origin [브랜치명]       브랜치 삭제 git branch -d [브랜치 이름] 현재 브랜치에 다른 브랜치 수정사항 병합git merge [다른 브랜치 이름] 
 
 
 특정 폴더 푸쉬하고 풀하기 
