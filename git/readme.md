@@ -49,15 +49,18 @@ $ cd algorithm
 2. 해당 디렉토리에서 git init으로 깃 초기화
 
 $ git init
+
 3. sparsecheckout 옵션 활성화
 
 $ git config core.sparsecheckout true
 4. 세부 디렉토리 추가
 
 $ echo "Folder1/" >> .git/info/sparse-checkout
+
 5. 원격 저장소 연결(추가)
 
 $ git remote add origin 깃헙주소
+
 6. pull 받기
 
 $ git pull origin main
